@@ -14,6 +14,7 @@ public class Main {
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
     public static final String FIND_CONTACT   = "GN";
+
     public static final String EQUAL_PHONES   = "EP";
     public static final String QUIT           = "Q";
 
@@ -60,6 +61,9 @@ public class Main {
                     break;
                 case FIND_CONTACT:
                     findByNumber(in, cBook);
+                    break;
+                case EQUAL_PHONES:
+                    checkForEqualsPhone(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -168,11 +172,11 @@ public class Main {
             System.out.println(NUMBER_DOES_NOT_EXIST);
         }
     }
-   /** private static void checkForEqualsPhone(ContactBook cBook) {
+   private static void checkForEqualsPhone(ContactBook cBook) {
         if (cBook.existEqualPhones()) {
             System.out.println(EQUAL_PHONES_FOUND);
         } else {
             System.out.println(EQUAL_PHONES_NOT_FOUND);
         }
-    }**/
+    }
 }
