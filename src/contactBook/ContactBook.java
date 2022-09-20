@@ -40,6 +40,15 @@ public class ContactBook {
         counter--;
     }
 
+    public Contact getContact(int phone) {
+        initializeIterator();
+        while(hasNext() && phone != contacts[currentContact].getPhone()){
+            next();
+        }
+
+        return contacts[currentContact];
+    }
+
     //Pre: name != null && hasContact(name)
     public int getPhone(String name) {
         return contacts[searchIndex(name)].getPhone();
